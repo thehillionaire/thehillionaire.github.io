@@ -16,26 +16,12 @@ h1 {
     padding: 4px;
     font-style: italic;
     text-align: center;
-    letter-spacing: 0.5em;
     border-bottom-style: solid;
     border-bottom-width: 20px;
     border-bottom-color: #947550;
 }
 
-h1.alt {
-    color: #E0AA0F;
-    background-color: #300;
-    font-size: 2em;
-    margin: 0;
-    margin-bottom: 7px;
-    padding: 4px;
-    font-style: italic;
-    text-align: center;
-    letter-spacing: 0.5em;
-    border-bottom-style: solid;
-    border-bottom-width: 20px;
-    border-bottom-color: #947550;
-}
+
 
 h2 {
     color: white;
@@ -46,7 +32,6 @@ h2 {
     padding-left: 14px;
 }
 h3 {
-    word-spacing: 20px;
     color: #ccc;
     background-color: green;
     padding: 4px;
