@@ -13,7 +13,7 @@
     <script src="https://maps.googleapis.com/maps/api/js"></script>
     <script>
       function initialize() {
-	directionsDisplay = new google.maps.DirectionsRenderer();
+	var directionsDisplay = new google.maps.DirectionsRenderer();
         var mapCanvas = document.getElementById('map-canvas');
 	var dorm = new google.maps.LatLng(30.445122, -84.294342);
 	var chem = new google.maps.LatLng(30.444299, -84.300530);
@@ -31,13 +31,14 @@
 		map: map,
 		title: 'Chemistry'
 	})
-
+function calcRoute() {
 	var start = dorm;
 	var end = chem;
 	var request = {
 		origin:start,
 		destination:end,
-		travelMode: google.maps.TravelMode.WALKING
+		travelMode: google.maps.TravelMode.WALKING,
+		region: 'Florida State University'
 	};
 
 	directionsService.route(request, function(response, status) {
@@ -45,6 +46,8 @@
 			directionsDisplay.setDirections(response);
 		}
 	});
+}
+	calcRoute();
       }
       google.maps.event.addDomListener(window, 'load', initialize);
     </script>
