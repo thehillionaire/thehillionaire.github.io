@@ -4,7 +4,20 @@
    <link rel="stylesheet" href="style.css">
    <script href="https://api.forecast.io/forecast/d7fef11aa5b2190ad703c183a081d38b/30.442451,-84.296228,2015-03-04T12:00:00"></script>
    <script>
-    
+    require("ti.forecast.io");
+    var forecast = new ForecastIO({
+    API_KEY: 'd7fef11aa5b2190ad703c183a081d38b'
+    });
+
+var condition = forecast.getCurrentConditions(30.442451, -84.296228, onSuccessCallback, onErrorCallback);
+
+function onSuccessCallback(weather) {
+  weather.getSummary();
+};
+
+function onErrorCallback(e) {
+  return;
+};
    </script>
 	 <h1>A Day in the Acedemic Life of Jake Hill</h1>
       
@@ -15,7 +28,7 @@
   <p>Welcome! This app will take you through a chronological journey of 24 hours in a
       College Student's life! to start, <a href="part1.html">click here!</a></p>
 </div>
-<div id="forecast.io"></div>
+<div id="forecast"></div>
 </body>
 </html>
   
