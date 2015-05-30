@@ -16,8 +16,14 @@
         var mapCanvas = document.getElementById('map-canvas');
 	var dorm = new google.maps.LatLng(30.445122, -84.294342);
         var mapOptions = {
+<<<<<<< HEAD
           center: dorm,
           zoom: 26,
+=======
+          center: new google.maps.LatLng(30.445122, -84.294342),
+          zoom: 18,
+          mapTypeId: google.maps.MapTypeId.HYBRID
+>>>>>>> origin/master
         }
         var map = new google.maps.Map(mapCanvas, mapOptions)
 
@@ -34,5 +40,6 @@
 <body>
 	<p>Wake up at Degraff Hall east, on the Florida State University Campus<p>
 	 <div id="map-canvas"></div>
+	<p><a href="part2.html">click here to continue</a></p>
 </body>
 </html>
