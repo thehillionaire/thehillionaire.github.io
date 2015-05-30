@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel ="stylesheet" href="style.css">
+	<h1> 10:00 AM, Wednesday March 4th, 2015</h1>
+
+	<style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+        var mapCanvas = document.getElementById('map-canvas');
+	var dorm = new google.maps.LatLng(30.445122, -84.294342);
+        var mapOptions = {
+          center: dorm,
+          zoom: 18,
+	mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+
+	var marker = new google.maps.Marker({
+		position: dorm,
+		map: map,
+		title: 'Dorm'
+	})
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+</head>
+<body>
+	<p>Leave Degraff hall east, go to Fisher Lecture Hall for Chemistry I lecture<p>
+	 <div id="map-canvas"></div>
+	<p><a href="part2.html">click here to continue</a></p>
+</body>
+</html>
