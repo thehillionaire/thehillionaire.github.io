@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel ="stylesheet" href="style.css">
+	<h1> 8:30PM Wednesday March 4th, 2015</h1>
+
+	<style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+	var directionsService = new google.maps.DirectionsService();
+	var directionsDisplay = new google.maps.DirectionsRenderer();
+        var mapCanvas = document.getElementById('map-canvas');
+        var dinner = new google.maps.LatLng(30.440379, -84.319339);
+	var dorm = new google.maps.LatLng(30.445174, -84.294328);
+        var mapOptions = {
+          center: dinner,
+          zoom: 18,
+	mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+
+	directionsDisplay.setMap(map);
+
+
+function calcRoute() {
+	var start = dinner;
+	var end = dorm;
+	var request = {
+		origin: dinner,
+		destination: dorm,
+		travelMode: google.maps.TravelMode.DRIVING,
+		region: 'Florida State University'
+	};
+
+	directionsService.route(request, function(response, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+			directionsDisplay.setDirections(response);
+		}
+	});
+}
+	calcRoute();
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+</head>
+<body>
+	<p>Drive from Burrito Boarder to dorm for studying, relaxation, and sleep<p>
+	 <div id="map-canvas"></div>
+	<p><a href="part11.html">click here to continue</a></p>
+</body>
+</html>
