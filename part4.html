@@ -18,7 +18,7 @@
         var mapCanvas = document.getElementById('map-canvas');
         var dorm = new google.maps.LatLng(30.445122, -84.294342);
         var lunch = new google.maps.LatLng(30.444582, -84.296724);
-	var prog = new google.maps.Latlng(30.445580, -84.300059);
+	var res = new google.maps.LatLng(30.445580, -84.300059);
         var mapOptions = {
           center: chem,
           zoom: 18,
@@ -31,7 +31,7 @@
 
 function calcRoute() {
 	var start = lunch;
-	var end = prog;
+	var end = res;
 	var request = {
 		origin: 'Florida State University Student Union, Tallahassee, FL',
 		destination: 'Carothers Hall, Tallahasse FL',
