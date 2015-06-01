@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel ="stylesheet" href="style.css">
+	<h1> 3:20PM Wednesday March 4th, 2015</h1>
+
+	<style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+	var directionsService = new google.maps.DirectionsService();
+	var directionsDisplay = new google.maps.DirectionsRenderer();
+        var mapCanvas = document.getElementById('map-canvas');
+        var dorm = new google.maps.LatLng(30.445122, -84.294342);
+	var unix = new google.maps.LatLng(30.445108, -84.298385);
+        var mapOptions = {
+          center: dorm,
+          zoom: 18,
+	mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+
+	directionsDisplay.setMap(map);
+
+
+function calcRoute() {
+	var start = dorm;
+	var end = unix;
+	var request = {
+		origin: 'DeGraff Hall East, Tallahassee FL',
+		destination: 'Carraway Bldg, Tallahassee FL',
+		travelMode: google.maps.TravelMode.WALKING,
+		region: 'Florida State University'
+	};
+
+	directionsService.route(request, function(response, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+			directionsDisplay.setDirections(response);
+		}
+	});
+}
+	calcRoute();
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+</head>
+<body>
+	<p>Walk from dorm to intro to UNIX class<p>
+	 <div id="map-canvas"></div>
+	<p><a href="part7.html">click here to continue</a></p>
+</body>
+</html>
