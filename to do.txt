@@ -1,0 +1,22 @@
+finish google maps route of day
+
+implement weather api to index
+
+add home and back button to each part (possible list?)
+
+add summary with all legs of journey on google maps
+
+possibly yelp rviews api for lunch and dinner
+
+aesthetic details
+
+change layout of mobile interface
+
+compact into WAR folder
+
+*******if all is finished*****
+
+add links to school website
+
+add images
+
