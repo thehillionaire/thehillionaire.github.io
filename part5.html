@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<link rel ="stylesheet" href="style.css">
+	<h1> 1:10PM Wednesday March 4th, 2015</h1>
+
+	<style>
+      #map-canvas {
+        width: 500px;
+        height: 400px;
+      }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js"></script>
+    <script>
+      function initialize() {
+	var directionsService = new google.maps.DirectionsService();
+	var directionsDisplay = new google.maps.DirectionsRenderer();
+        var mapCanvas = document.getElementById('map-canvas');
+        var dorm = new google.maps.LatLng(30.445122, -84.294342);
+	var res = new google.maps.LatLng(30.445580, -84.300059);
+        var mapOptions = {
+          center: res,
+          zoom: 18,
+	mapTypeId: google.maps.MapTypeId.HYBRID
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+
+	directionsDisplay.setMap(map);
+
+
+function calcRoute() {
+	var start = res;
+	var end = dorm;
+	var request = {
+		origin: 'Carothers Hall, Tallahasse FL',
+		destination: 'DeGraff Hall East, Tallahassee FL',
+		travelMode: google.maps.TravelMode.WALKING,
+		region: 'Florida State University'
+	};
+
+	directionsService.route(request, function(response, status) {
+		if (status == google.maps.DirectionsStatus.OK) {
+			directionsDisplay.setDirections(response);
+		}
+	});
+}
+	calcRoute();
+      }
+      google.maps.event.addDomListener(window, 'load', initialize);
+    </script>
+
+</head>
+<body>
+	<p>Walk from Recitation class to dorm to study<p>
+	 <div id="map-canvas"></div>
+	<p><a href="part6.html">click here to continue</a></p>
+</body>
+</html>
