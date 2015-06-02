@@ -1,0 +1,8 @@
+This application was designed by means of a basic HTML website, as the application 
+consists of twelve pages. The index establishes the goal of the application, and displays the 
+schedule, in which links to every other HTML page is established. Each daily task has its own 
+HTML page, in which a brief description of the daily action is given, along with a
+customized Google Map API to illustrate the route taken to each activity. At any given page, the user can travel
+ahead to the next daily activity, or back to the main schedule. Each activity page
+has its own customized Google Maps API, as the origin and destination are coorelated to the event before and the current event
+displayed. A style page in CSS is also enclosed, utilizing a basic style setup.

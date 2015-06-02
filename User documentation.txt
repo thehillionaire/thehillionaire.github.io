@@ -1,0 +1,7 @@
+This application has been designed to walk a user through a specific day in the life of Computer Science
+Student Jake Hill. It is assumed that the user has basic knowledge towards uage of hyperlinks and Google Maps.
+There are ten scheduled items in which tasks of the day are briefly described and displayed using text and Google Maps. Althought the
+design and organization are basic in nature, the application is fully functional and clear in its functions and
+information. Unfortunately, Weather data was unable to be displayed, as Dark Sky's API deployment proved to be beyond the application author's
+realm of understanding, given the amount of time assigned to learn and build the requirements for the application.
+                                                                   Author: Jake Hill
